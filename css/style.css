@@ -1,0 +1,138 @@
+*{
+
+	padding: 0;
+	margin: 0;
+	font-family: 'Josefin Sans', sans-serif;
+	box-sizing: border-box;
+}
+nav{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 25px;
+	padding-left: 8%;
+	padding-right: 8%;
+	vertical-align: middle;
+}
+
+.portada{
+	height: 100vh;
+	width: 100%;
+}
+.logo{
+	vertical-align: middle;
+	color:#f9004d;
+	font-size: 35px;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+@keyframes animate {
+	0% {
+		left: 0;
+	}
+
+	50% {
+		left: 100%;
+	}
+
+	0% {
+		left: 0;
+	}
+}
+
+.rightside {
+	position: absolute;
+	left: 50%;
+	top: 5%;
+	margin: 0;
+}
+span{
+	color: #f9004d;
+}
+.btn{
+	background-color:#f9004d;
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 10px 25px;
+	border-radius: 30px;
+	transition: transform .4s; 
+}
+.btn:hover{
+	transform: scale(1.2);
+}
+.content{
+	position: absolute;
+	top: 50%;
+	left:17%;
+	transform: translateY(-50%);
+}
+h1{
+	color: black;
+	margin: 20px 0px 20px;
+	font-size: 75px;
+}
+h4{
+	color:#000;
+	letter-spacing: 2px;
+	font-size: 20px;
+}
+
+.cualitativa{
+	width: 100%;
+	padding: 100px 0px;
+	background-color: #191919;
+}
+.cualitativa img{
+	height: auto;
+	width: 430px;
+}
+.cualitativa-text{
+	width: 550px;
+}
+.main{
+	width: 1130px;
+	max-width: 95%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.cualitativa-text h2{
+	color: white;
+	font-size: 75px;
+	text-transform: capitalize;
+	margin-bottom: 20px;
+}
+.cualitativa-text h5{
+	color: white;
+	letter-spacing: 2px;
+	font-size: 22px;
+	margin-bottom: 25px;
+	text-transform: capitalize;
+}
+.cualitativa-text p{
+	color: #fcfc;
+	letter-spacing: 1px;
+	line-height: 28px;
+	font-size: 18px;
+	margin-bottom: 45px;
+}
+button{
+	background-color:#f9004d;
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 13px 30px;
+	border-radius: 30px;
+	transition: .4s;
+	font-size: 20px;
+}
+button:hover{
+	background-color: transparent;
+	border: 2px solid #f9004d;
+	cursor: pointer;
+}
