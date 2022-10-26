@@ -130,7 +130,7 @@
 					<img src="img/castor.png" style="margin-top: -100px;" height="50px">
 				</div>
 				<div id="logs"></div>
-				<div style="margin: 0 auto; width: 200px; padding-top: 40px; padding-bottom: 100px;">
+				<div style="margin: 0 auto; width: 200px; padding-top: 40px;">
 					<button id="plusButton">+</button>
 					<button id="minusButton">-</button>
 				</div>
@@ -152,67 +152,131 @@
 					});
 				</script>
 			</div>
-			<p class="parrafo">Cuando los castores construyen sus diques, el flujo de agua a través del río disminuye pues esta siendo obstruido por la construcción de los castores. Así, mientras más voluminoso sean los obstáculos, mayor dificultad presentará el agua para atravesar. Entonces podemos pensar que el<span> flujo de agua es equivalente a la corriente eléctrica</span>, y los <span>troncos a la resistencia</span>, pues se opone al flujo. De este modo, necesitamos mas trabajo para que el agua circule a causa de las obstrucciones, lo que sería análogo al aumento del potencial eléctrico. O viceversa, que al retirar las ramas del agua, el flujo del agua será más expedito.</p>
-			<p class="parrafo"></p>
+			<p style="padding-top: 100px; padding-bottom: 50px;"class="parrafo">Cuando los castores construyen sus diques, el flujo de agua a través del río disminuye pues esta siendo obstruido por la construcción de los castores. Así, mientras más voluminoso sean los obstáculos, mayor dificultad presentará el agua para atravesar. Entonces podemos pensar que el<span> flujo de agua es equivalente a la corriente eléctrica</span>, y los <span>troncos a la resistencia</span>, pues se opone al flujo. De este modo, necesitamos mas trabajo para que el agua circule a causa de las obstrucciones, lo que sería análogo al aumento del potencial eléctrico. O viceversa, que al retirar las ramas del agua, el flujo del agua será más expedito.</p>
 		</div>
 	</div>
 
-	<!-- whatever -->
-	<div id="service" class="service">
+	<!-- explicacion cuantitativa -->
+	<section class="cuantitativa">
+		<script>
+			$('#cuantitativa2').hide();
+			$(document).ready(function () {
+				$("#cuantitativa2").hide();
+				$("#toggle2").click(function () {
+					$("#cuantitativa2").slideToggle();
+					if ($("#footer-large").is(':visible')) {
+					window.location = '#footer-large';
+					}
+				})
+			});	
+		</script>
+		<div class="main">
+			<div class="cualitativa-text">
+				<h2 style="text-align: justify;">Explicación Cuantitativa</h2>
+				<p style="color:white">El cientifico Georg Simon Ohm, en el año 1827, a través de experimentacion con fenomenos relacionados con la electricidad, descubrió la relación entre Voltaje (V), la intensidad de corriente (I) y la resistencia (R).</p>
+				
+				<button id="toggle2" type="button">Ver más</button>
+			</div>
+		</div>
+	</section>
+	<div id="cuantitativa2" class="cuantitativa2" style="display:none; margin: 0 auto">
+		<div class="cuantitativo-text" style="width:1200px; margin: 0 auto;">
+			<p class="parrafo" style="padding-top: 40px;">La fórmula planteada por Ohm nos ofrece dos relaciones importantes de la resistencia: la corriente eléctrica es directamente proporcional con el potencial eléctrico e inversamente proporcional a la resistencia. Gracias a la explicación anterior, se puede entender fácilmente porqué esto pasa, pero además, lo podemos comprobar con simples operaciones matemáticas, tal como se presenta a continuación.</p>
+		</div>
+		<div class="demo-resistencia">
+			<div class="leftpanel">
+				<h1 id="V" style="color:white; font-size: 30; padding-top: 100px;">V</h1>
+				<h1 style="color:white; padding-top: 100px">=</h1>
+				<h1 id= "I" style="color:white; font-size: 30; padding-top: 100px">I</h1>
+				<h1 id= "R" style="color:white; font-size: 30; padding-top: 100px">R</h1>
+				
+			</div>
+			<div class="rightpanel" style="margin-top:-600px">
+				<h2>Voltaje [V]</h2>
+				<div class="slider">
+					<input id="range3" name="range" type="range" min="1" max="10" value="1" oninput="changeVoltaje(this)"/>
+					<p id="rangeValue3">1</p>
+				</div>
+				<h2>Resistencia [Ω]</h2>
+				<div class="slider">
+					<input id="range4" name="range" type="range" min="1" max="10" value="1" oninput="changeResistencia(this)"/>
+					<p id="rangeValue4">1</p>
+				</div>
+				<div>
+					<h2 style="padding-top: 200px">Valor de la corriente</h2>
+					<h1 style="text-align: center" id="valorCorriente">1[A]</h1>
+				</div>
+			</div>
+			<script src="scripts/simulacion2.js"></script>
+
+		</div>
+		<div class="cuantitativo-text" style="width:1200px; margin: 0 auto;">
+			<p class="parrafo" style="padding-bottom:40px">Esto resulta muy útil para conocer los valores de alguna variable cuando falta una incógnita. Por otro lado, cabe destacar que cuando se calcula el paso de la corriente por una resistencia, se esta calculando la pérdida de “energía” que por el conductor, es decir, si nuestra incógnita es el potencial eléctrico después de pasar por la resistencia, se tiene que el valor obtenido será el voltaje que cae al pasar por dicha resistencia.</p>
+			<p class="parrafo">Una técnica sencilla de recordar la Ley de Ohm es mediante el siguiente triángulo: Para conocer el valor de cualquier variable, basta con tapar aquella que se desea obtener y luego realizar la operacion según corresponda. Las variables que se encuentran en horizontal se multiplican entre sí, mientras que en vertical se dividen.</p>
+		</div>
+		<img src="img/formula-ohm.png" style="padding:40px 0 50px 800px;" height="300px">
+	</div>
+	
+	<!-- ejemplos -->
+	<div id="ejemplos" class="ejemplos">
 	<div class="title">	
 		<h2>Ejemplos numéricos</h2>
+		<p></p>
 	</div>
-
-	<!-- <div class="box">
+	<div class="box">
 		<div class="card">
-			<i class="fas fa-bars"></i>
-			<h5>Web Development</h5>
+			<h1 style="color:#f9004d">Ω</h1>
+			<h5>Ejercicios resueltos</h5>
 			<div class="pra">
-				<p>Every website should be built with two primary goals: Firstly, it needs to work across all devices. Secondly, it needs to be fast as possible.</p>
+				<p style="font-size: 20px; text-align: justify; color:white">Ahora se presentarán algunos ejemplos numéricos que ayudará a la comprensión de la ley. Como primera instancia, se ofrece un video que resuelve circuitos eléctricos en serie. Si bien, esto parece no tener relación con Ohm, para resolver los ejercicios es necesario despejar ciertas variables mediante la Ley de Ohm</p>
 
 				<p style="text-align: center;">
-					<a class="button" href="#">Read More</a>
 				</p>
 			</div>
 		</div>
-
 		<div class="card">
-			<i class="far fa-user"></i>
-			<h5>Web Development</h5>
+			<img src="img/serie.png"></img>
+			<h5>Circuitos en serie</h5>
 			<div class="pra">
-				<p>Every website should be built with two primary goals: Firstly, it needs to work across all devices. Secondly, it needs to be fast as possible.</p>
+				<iframe width="300px" height="345" src="https://www.youtube.com/embed/J3_Q3nFjm7U">
+				</iframe>
 
-				<p style="text-align: center;">
-					<a class="button" href="#">Read More</a>
-				</p>
 			</div>
 		</div>
-
 		<div class="card">
-			<i class="far fa-bell"></i>
-			<h5>Web Development</h5>
-			<div class="pra">
-				<p>Every website should be built with two primary goals: Firstly, it needs to work across all devices. Secondly, it needs to be fast as possible.</p>
-
-				<p style="text-align: center;">
-					<a class="button" href="#">Read More</a>
-				</p>
+			<img src="img/lupa.png" style="height:100px; margin-bottom: 10px;"></img>
+			<h5>Ejercicio detallado</h5>
+			<img class="ejercicio" src="img/ejercicio.png"></img>
 			</div>
 		</div>
-	</div> -->
 	</div>
-
-
-	<!------footer start--------->
-	<!-- <footer>
-		<p>Tahmid Ahmed</p>
-		<p>For more HTML, CSS, and coding tutorial - please click on the link below to subscribe to my channel:</p>
-		<div class="social">
-			<a href="#"><i class="fab fa-facebook-f"></i></a>
-			<a href="#"><i class="fab fa-instagram"></i></a>
-			<a href="#"><i class="fab fa-dribbble"></i></a>
+	</div>
+	<!-- aplicaciones -->
+	<section class="aplicaciones-titulo">
+		<div class="main">
+			<div class="cualitativa-text">
+				<h2>Aplicaciones tecnológicas</h2>
+			</div>
 		</div>
-		<p class="end">CopyRight By Tahmid Ahmed</p>
-	</footer> -->
+	</section>
+	<div>
+	<div id="ejemplos" class="ejemplos">
+		<div class="main">
+			<div class="cualitativa-text">
+				<p style="color:white">Se aplica en todos los cálculos de redes eléctricas, en el diseño de circuitos electrónicos, en el diseño de calentadores eléctricos, en el cálculo de disipadores de calor, en fin, en toda aplicación de energía eléctrica, a cualquier escala, está la Ley de Ohm presente.</p>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	<!------bibliografia--------->
+	<footer>
+		<p>Bibliografía</p>
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+	</footer>
 </body>
 </html>
