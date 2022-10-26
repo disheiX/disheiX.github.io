@@ -1,8 +1,5 @@
 var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
-var xPos = -100;
-var yPos = 50;
-var motionTrailLength = 10;
 
 
 

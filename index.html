@@ -7,6 +7,24 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script
+	src="https://code.jquery.com/jquery-3.6.1.min.js"
+	integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+	crossorigin="anonymous"></script>
+	<script src="scripts/fade-in.js"></script>
+	<script src="scripts/castor.js"></script>
+	<script>
+		$('#cualitativa2').hide();
+		$(document).ready(function () {
+			$("#cualitativa2").hide();
+			$("#toggle1").click(function () {
+				$("#cualitativa2").slideToggle();
+				if ($("#footer-large").is(':visible')) {
+				window.location = '#footer-large';
+				}
+			})
+		});	
+	</script>
 </head>
 <body>
 	<!----Portada Ley de Ohm---->
@@ -22,7 +40,7 @@
 			<canvas id="myCanvas" width="450" height="200" style="margin-top:-40px">
 			<script src="scripts/resistencia.js"></script>
 		</div>
-		<img class=rightside src="img/George-Simon-Ohm.png" height="850px">
+		<img class=rightside src="img/George-Simon-Ohm.png" height="700px">
 	</div>
 
 	<!----Explicación cualitativa---->
@@ -31,8 +49,170 @@
 			<img src="img/main-img.png">
 			<div class="cualitativa-text">
 				<h2>Explicación cualitativa</h2>
-				<p>Esta ley relaciona los conceptos de potencial eléctrico, corriente eléctrica y resistencia, lo que permite establecer ciertas características. Así que primero veamos bajo que principios trabaja la Ley de Ohm para finalmente comprenderla.</p>
-				<button type="button">Vamos a conocerlos</button>
+				<p>Esta ley relaciona los conceptos de potencial eléctrico, corriente eléctrica y resistencia, lo que permite establecer ciertas características. Así que primero veamos bajo que principios trabaja la Ley de Ohm para finalmente comprenderla. Pero ¿por qué pasa esto?</p>
+				<button id="toggle1" type="button">Descubrámoslo</button>
 			</div>
 		</div>
 	</section>
+
+	<!----- más explicación cualitativa----->
+	<div id= "cualitativa2" style="display:none" class="cualitativa2">
+		<div class="main2">
+			<div class="cualitativa2-text">
+				<h2 style="text-align: center;">Potencial, corriente y resistencia eléctrica</h2>
+				<div style="width: 50%; float:left">
+					<p class="parrafo">Pues bien, la corriente eléctrica no es más que la cantidad de cargas eléctricas que se desplazan durante un periodo de tiempo, mientras que el potencial eléctrico es el trabajo que necesitan realizar dichas cargas para desplazarse. Entonces en presencia de más cargas eléctricas, lógicamente mayor será el trabajo para que fluyan, exigiendo una mayor diferencia de potencial eléctrico. Aun así, proporcionalidad no es sinónimo de igualdad, por lo que existe un factor de proporcionalidad entre ambas variables que se denomina <span>resistencia</span>.</p>
+				</div>
+				<div style="width: 50%; float:right">
+					<p class="parrafo">Dicha resistencia es un parámetro completamente de independiente de la corriente eléctrica y del potencial eléctrico dado que es una propiedad del objeto en sí. Sin embargo, la resistencia no siempre es la misma entre objetos de mismo material, ya que la forma influye en la conductividad: a <span>mayor longitud</span> del objeto, <span>mayor resistencia</span>, o por el contrario, a mayor área de una sección transversal, menor resistencia. </p>
+				</div>	
+			</div>
+		</div>
+		<h2 style="text-align: center; padding-top: 50px;">Simulación de resistencia de un conductor</h2>
+		<div class="demo-resistencia">
+			<svg style="padding-left:50px;"
+				viewBox="0 0 300 100" version="1.1"
+				xmlns="http://www.w3.org/2000/svg">
+				<line id="shortLine" stroke-linecap="round"
+						x1="35" y1="50" x2="35" y2="50">
+				</line>		
+			</svg>
+			<div class="rightpanel">
+				<h2>Largo [m]</h2>
+				<div class="slider">
+					<input id="range" name="range" type="range" min="35" max="234" value="35" oninput="changeLenght(this)"/>
+					<p id="rangeValue1">1</p>
+				</div>
+				<h2>Área transversal [m]</h2>
+				<div class="slider">
+					<input id="range2" name="range" type="range" min="10" max="49" value="10" oninput="changeWidth(this)"/>
+					<p id="rangeValue2">1</p>
+				</div>
+				<div>
+					<h2 style="padding-top: 200px">Valor de la resistencia</h2>
+					<h1 style="text-align: center" id="valorResistencia">1ρ [Ω]</h1>
+				</div>
+				<div>
+
+				</div>
+			
+			</div>
+			<script src="scripts/resistencia2.js"></script>
+		</div>
+		<div class="analogia">
+			<p style="padding-bottom: 200px;"class="parrafo">Con lo anterior, se puede entender que la resistencia se opone al flujo de cargas, de manera que al aumentar la resistencia es necesario mayor diferencia del potencial eléctrico. Esto puede explicarse mediante la siguiente analogía...</p>
+			<div class="hideme">
+				
+				<h2>Supongamos que nos encontramos en un río donde habitan castores.</h2>			
+
+				<!-- Water waving -->
+				<svg class="editorial"
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					viewBox="0 24 150 28"
+					preserveAspectRatio="none">
+					<defs>
+					<path id="gentle-wave"
+						d="M-160 44c30 0 
+							58-18 88-18s
+							58 18 88 18 
+							58-18 88-18 
+							58 18 88 18
+							v44h-352z" />
+					</defs>
+					<g class="parallax">
+					<use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2"/>
+					<use xlink:href="#gentle-wave" x="50" y="3" fill="#3461c1"/>
+					<use xlink:href="#gentle-wave" x="50" y="6" fill="#2d55aa"/>  
+					</g>
+				</svg>
+				<div id="first-child" style="opacity:0">
+					<img src="img/castor.png" style="margin-top: -100px;" height="50px">
+				</div>
+				<div id="logs"></div>
+				<div style="margin: 0 auto; width: 200px; padding-top: 40px; padding-bottom: 100px;">
+					<button id="plusButton">+</button>
+					<button id="minusButton">-</button>
+				</div>
+				
+				<script>
+					$(function(){
+						$('#plusButton').on('click',function(){
+							$('#first-child').addClass('animate');
+							setTimeout(function() {
+								$('#first-child').removeClass('animate');
+							}, 300);
+						});
+						$('#minusButton').on('click',function(){
+							$('#first-child').addClass('animate');
+							setTimeout(function() {
+								$('#first-child').removeClass('animate');
+							}, 300);
+						});
+					});
+				</script>
+			</div>
+			<p class="parrafo">Cuando los castores construyen sus diques, el flujo de agua a través del río disminuye pues esta siendo obstruido por la construcción de los castores. Así, mientras más voluminoso sean los obstáculos, mayor dificultad presentará el agua para atravesar. Entonces podemos pensar que el<span> flujo de agua es equivalente a la corriente eléctrica</span>, y los <span>troncos a la resistencia</span>, pues se opone al flujo. De este modo, necesitamos mas trabajo para que el agua circule a causa de las obstrucciones, lo que sería análogo al aumento del potencial eléctrico. O viceversa, que al retirar las ramas del agua, el flujo del agua será más expedito.</p>
+			<p class="parrafo"></p>
+		</div>
+	</div>
+
+	<!-- whatever -->
+	<div id="service" class="service">
+	<div class="title">	
+		<h2>Ejemplos numéricos</h2>
+	</div>
+
+	<!-- <div class="box">
+		<div class="card">
+			<i class="fas fa-bars"></i>
+			<h5>Web Development</h5>
+			<div class="pra">
+				<p>Every website should be built with two primary goals: Firstly, it needs to work across all devices. Secondly, it needs to be fast as possible.</p>
+
+				<p style="text-align: center;">
+					<a class="button" href="#">Read More</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="card">
+			<i class="far fa-user"></i>
+			<h5>Web Development</h5>
+			<div class="pra">
+				<p>Every website should be built with two primary goals: Firstly, it needs to work across all devices. Secondly, it needs to be fast as possible.</p>
+
+				<p style="text-align: center;">
+					<a class="button" href="#">Read More</a>
+				</p>
+			</div>
+		</div>
+
+		<div class="card">
+			<i class="far fa-bell"></i>
+			<h5>Web Development</h5>
+			<div class="pra">
+				<p>Every website should be built with two primary goals: Firstly, it needs to work across all devices. Secondly, it needs to be fast as possible.</p>
+
+				<p style="text-align: center;">
+					<a class="button" href="#">Read More</a>
+				</p>
+			</div>
+		</div>
+	</div> -->
+	</div>
+
+
+	<!------footer start--------->
+	<!-- <footer>
+		<p>Tahmid Ahmed</p>
+		<p>For more HTML, CSS, and coding tutorial - please click on the link below to subscribe to my channel:</p>
+		<div class="social">
+			<a href="#"><i class="fab fa-facebook-f"></i></a>
+			<a href="#"><i class="fab fa-instagram"></i></a>
+			<a href="#"><i class="fab fa-dribbble"></i></a>
+		</div>
+		<p class="end">CopyRight By Tahmid Ahmed</p>
+	</footer> -->
+</body>
+</html>
