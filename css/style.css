@@ -10,8 +10,8 @@
 }
 nav{
 	display: flex;
-	align-items: left;
-	/* justify-content: space-between; */
+	align-items: center;
+	justify-content:left;
 	padding-top: 25px;
 	padding-left: 8%;
 	padding-right: 8%;
