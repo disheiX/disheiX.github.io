@@ -213,12 +213,16 @@
 		<div class="cuantitativo-text" style="width:1200px; margin: 0 auto;">
 			<p class="parrafo" style="padding-bottom:40px">Esto resulta muy útil para conocer los valores de alguna variable cuando falta una incógnita. Por otro lado, cabe destacar que cuando se calcula el paso de la corriente por una resistencia, se esta calculando la pérdida de “energía” que por el conductor, es decir, si nuestra incógnita es el potencial eléctrico después de pasar por la resistencia, se tiene que el valor obtenido será el voltaje que cae al pasar por dicha resistencia.</p>
 			<p class="parrafo">Una técnica sencilla de recordar la Ley de Ohm es mediante el siguiente triángulo: Para conocer el valor de cualquier variable, basta con tapar aquella que se desea obtener y luego realizar la operacion según corresponda. Las variables que se encuentran en horizontal se multiplican entre sí, mientras que en vertical se dividen.</p>
+			<div style="display: flex;
+			justify-content: center;">
+						<img src="img/formula-ohm.png" style="padding:40px 0 50px 0px; height: 300px; margin: 0 auto">
+			</div>
+
 		</div>
-		<img src="img/formula-ohm.png" style="padding:40px 0 50px 800px;" height="300px">
 	</div>
 	
 	<!-- ejemplos -->
-	<div id="ejemplos" class="ejemplos">
+	<div id="ejemplos" class="ejemplos" >
 	<div class="title">	
 		<h2>Ejemplos numéricos</h2>
 		<p></p>
@@ -244,12 +248,39 @@
 			</div>
 		</div>
 		<div class="card">
-			<img src="img/lupa.png" style="height:100px; margin-bottom: 10px;"></img>
+			<img src="img/lupa.png" style="height:100px; margin-bottom: 10px; "></img>
 			<h5>Ejercicio detallado</h5>
-			<img class="ejercicio" src="img/ejercicio.png"></img>
+			<img id="myImg" src="img/ejercicio.png" alt="Solución" style="width:100%;max-width:300px">
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+				<span class="close">&times;</span>
+				<img class="modal-content" id="img01">
+				<div id="caption"></div>
 			</div>
+			<script>
+			// Get the modal
+			var modal = document.getElementById("myModal");
+
+			// Get the image and insert it inside the modal - use its "alt" text as a caption
+			var img = document.getElementById("myImg");
+			var modalImg = document.getElementById("img01");
+			var captionText = document.getElementById("caption");
+			img.onclick = function(){
+			modal.style.display = "block";
+			modalImg.src = this.src;
+			captionText.innerHTML = this.alt;
+			}
+
+			// Get the <span> element that closes the modal
+			var span = document.getElementsByClassName("close")[0];
+
+			// When the user clicks on <span> (x), close the modal
+			span.onclick = function() { 
+			modal.style.display = "none";
+			}
+			</script>
 		</div>
-	</div>
+
 	</div>
 	<!-- aplicaciones -->
 	<section class="aplicaciones-titulo">
@@ -260,23 +291,40 @@
 		</div>
 	</section>
 	<div>
-	<div id="ejemplos" class="ejemplos">
+	<div id="aplicaciones" class="aplicaciones">
+		<div style="width:1000px; margin: 0 auto; padding-top: 100px; padding-bottom: 100px;">
+			<p class=parrafo>Se aplica en todos los cálculos de redes eléctricas, en el diseño de circuitos electrónicos, en el diseño de calentadores eléctricos, en el cálculo de disipadores de calor, en fin, en toda aplicación de energía eléctrica, a cualquier escala, está la Ley de Ohm presente.</p>
+		</div>
+
 		<div class="main">
-			<div class="cualitativa-text">
-				<p style="color:white">Se aplica en todos los cálculos de redes eléctricas, en el diseño de circuitos electrónicos, en el diseño de calentadores eléctricos, en el cálculo de disipadores de calor, en fin, en toda aplicación de energía eléctrica, a cualquier escala, está la Ley de Ohm presente.</p>
+			<div style="margin-top: -60px;">
+				<h3>La ley de Ohm puede usarse para validar:</h2>
+					<ul class="a">
+						<li>Valores estáticos de los componentes del circuito</li>
+						<li><span>Niveles de corriente</span></li>
+						<li>Suministros de voltaje</li>
+						<li><span>Caídas de tensión</span></li>
+						<li>Muchos dispositivos eléctricos!</li>
+						</ul>		
+			</div>
+			<img src="img/ohm.png" height="300px">
+		</div>			
+		</div>
+		<div style="width: 100%; margin-top: 50px;">
+			<div class="card" style="width: 1100px; margin: 0 auto; background-color:rgb(31, 31, 31);">
+				<h5>Video de la Ley en la vida cotidiana</h5>
+				<iframe width="900px" height="450px" src="https://www.youtube.com/embed/phhzruQp3JI">
+				</iframe>
 			</div>
 		</div>
+
 	</div>
-	
 	
 
 	<!------bibliografia--------->
 	<footer>
 		<p>Bibliografía</p>
-		<p>1</p>
-		<p>2</p>
-		<p>3</p>
-		<p>4</p>
+		<p>Serway, R. A., & Jewett, J. W. (2009). Física: Para ciencias e ingeniería con Física Moderna (7a. ed.--.)</p>
 	</footer>
 </body>
 </html>
